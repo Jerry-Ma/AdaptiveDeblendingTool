@@ -1,0 +1,39 @@
+# This file is the input file for adaptive de-blending tool
+# The parameters have two kinds:
+#   string :  plain text with or without quote
+#                 (quote will be removed upon parsing)
+#   list : a list of string (often files) separated by comma, and enclosed
+#           in braket (i.e. []). Alternatively, a file contains a list of
+#           strings can be used instead of having a long list, in which case,
+#           a single plain text string should be used (i.e. no [] around)
+#
+# The number of files in the *_list parameters should be the same as the target
+# catalog (low_res_cat) and should be correctly placed in order according to
+# the target catalog.
+#
+# High resolution maps
+hi_res_map_list = ["./sdp_qso_01_decam.z.fits"]
+hi_res_cat_list = ["./sdp_qso_01_cutout.cat"
+                   ]
+hi_res_label = 'DECam z band'
+hi_res_coord_index = [2, 3]  # 0 is the first column
+
+# Low resolution maps
+low_res_map_list = ["./cut_8_HATLAS_SDP_250_map.fits"]
+low_res_noise_list = ["./cut_1_HATLAS_SDP_250_noise.fits"]
+low_res_cat = "./Hatlas-SDP_001.asc"
+low_res_label = 'HATLAS SDP 001 [250um]'
+low_res_beamsize = 18"
+low_res_coord_index = [0, 1]
+low_res_ps = 5  # arcsec
+low_res_psf = "/home/ma/Codes/Hatlas/SDP/HATLAS_SDP_250_small_prf.fits"
+
+# GalFit
+galfit_workroot = "./gfwork"
+galfit_bin = "/home/ma/Codes/galfit/galfit"
+
+# XClip
+xclip_bin = "/usr/bin/xclip"
+
+# xpa ds9
+xpa_extracmd = ['zoom to 24']

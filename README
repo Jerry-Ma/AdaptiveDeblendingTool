@@ -1,0 +1,36 @@
+Before run:
+    Install the dependencies:
+        ds9
+            download: http://ds9.si.edu/site/Download.html
+        xpa
+            download: http://hea-www.harvard.edu/RD/xpa/
+        pyds9
+             install: git clone https://github.com/ericmandel/pyds9
+        xclip
+            download: http://sourceforge.net/projects/xclip/
+
+How to run:
+    Create a soft link of adpdeb in your PATH
+    Create a project folder, put/link the relevant data into it
+    Create a .input file int the project folder
+        (see the next section for an example)
+    Get into the project folder, and run adpdeb
+
+How to use:
+    Click the `load` button to load the .input file, the targets will be
+        loaded in to the list widget
+    Select one entry in the list, ds9 will popup and load the corresponding
+        info
+    In DS9, click the green circles to select position prior(s)
+        (hold <shift> key to select more)
+    Go to GUI, hit <enter> or click the `GalFit` button to run GalFit. The
+        composed parameter file for GalFit is shown in the second tab, the
+        output of the GalFit is shown in the third tab.
+    Change to the first tab to re-select and re-run the process.
+    The result is kept in a logfile, which could be accessed by clicking the
+        blue hyper-link located on the last line of the information panel to
+        the right. The default browser will be used to display the html logfile.
+
+Example:
+    In the `Hatlas_001` fold, it contains a .input file and some data.
+    In the .input file there are some explanation on how to write such files.
