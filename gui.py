@@ -233,7 +233,7 @@ map : {8:s}
                                self.sourceselector.galfit_work,
                                self.sourceselector.galfit_logfile)
         if os.path.isfile(logfile):
-            webbrowser.open(logfile)
+            webbrowser.open("file://" + logfile)
         else:
             print "[!] galfit logfile does not exist"
 

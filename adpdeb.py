@@ -20,6 +20,7 @@ from astropy.io import fits
 import types
 import numpy as np
 import os
+import sys
 import subprocess
 import time
 import uuid
@@ -51,6 +52,7 @@ class SourceSelector(object):
         self.galfit_workroot = os.path.abspath(kwargs['galfit_workroot'])
         self.galfit_bin = os.path.abspath(kwargs['galfit_bin'])
         self.xclip_bin = os.path.abspath(kwargs['xclip_bin'])
+        self._validate_bin()
         self.xpa_extracmd = kwargs['xpa_extracmd']
 
         self.lastwarning = ""
@@ -79,6 +81,18 @@ class SourceSelector(object):
         with open('wcs.dump', 'w') as fo:
             fo.write(self.low_res_wcs)
         self.clean_display()
+
+    def _validate_bin(self):
+        if not os.path.isfile(self.galfit_bin):
+            print "[!] Could not find executable of GalFit"
+            print "[!] Please check the .input file parameter `galfit_bin`"
+            print "[x] Abort"
+            sys.exit(1)
+        if not os.path.isfile(self.xclip_bin):
+            print "[!] Could not find executable of XClip"
+            print "[!] Please check the .input file parameter `xclip_bin`"
+            print "[x] Abort"
+            sys.exit(1)
 
     def show_label(self, text):
         ra, dec = map(float, self.ds9.get('pan wcs fk5').strip().split())

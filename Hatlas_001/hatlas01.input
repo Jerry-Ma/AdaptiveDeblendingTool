@@ -30,10 +30,10 @@ low_res_psf = "/home/ma/Codes/Hatlas/SDP/HATLAS_SDP_250_small_prf.fits"
 
 # GalFit
 galfit_workroot = "./gfwork"
-galfit_bin = "/home/ma/Codes/galfit/galfit"
+galfit_bin = "/usr/local/bin/galfit"
 
 # XClip
-xclip_bin = "/usr/bin/xclip"
+xclip_bin = "/usr/local/bin/xclip"
 
 # xpa ds9
 xpa_extracmd = ['zoom to 24']
