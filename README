@@ -10,9 +10,10 @@ Before run:
             download: http://sourceforge.net/projects/xclip/
 
 How to run:
-    Create a soft link of adpdeb in your PATH
+    Create a soft link of adpdeb in a folder that is in the $PATH
+        (or include this folder to the $PATH)
     Create a project folder, put/link the relevant data into it
-    Create a .input file int the project folder
+    Create a .input file in the project folder
         (see the next section for an example)
     Get into the project folder, and run adpdeb
 
